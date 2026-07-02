@@ -25,3 +25,12 @@
 }
 
 /* FORMATANDO O CABEÇALHO*/
+#cabecalho{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    height: 60px;
+}
+
+/*CONFIGURANDO MENU NA HORIZONTAL*/
