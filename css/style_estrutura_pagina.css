@@ -1,9 +1,7 @@
 /* IMPORTANDO A FONTE DAS LETRAS DO google fonts*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-
 /*DEFINE AS CONFIGURAÇÕES EM TODOS ELEMENTOS DA PÁGINA*/
-
 
 *{
     margin: 0px;
@@ -20,4 +18,10 @@
     --branca: #ffffff;
 }
 
-/*FORMATANDO O CABEÇALHO*/
+/*FORMATANDO A TAG main PELO ID GERAL*/
+#geral{
+    margin: 20px;
+
+}
+
+/* FORMATANDO O CABEÇALHO*/
