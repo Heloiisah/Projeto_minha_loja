@@ -13,3 +13,11 @@
 }
 
 /* CRIANDO VARIÁVEIS*/
+:root{
+    --cor01: #671d92;
+    --cor02: #945fb3;
+    --cor03: #ceaee0;
+    --branca: #ffffff;
+}
+
+/*FORMATANDO O CABEÇALHO*/
