@@ -34,3 +34,8 @@
 }
 
 /*CONFIGURANDO MENU NA HORIZONTAL*/
+#menu ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
