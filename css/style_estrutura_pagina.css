@@ -98,8 +98,12 @@
     justify-content: center;
     border: 1px solid var(--cor02);
     border-radius: 8px;
+    cursor: pointer;
 }
-
+ 
+.card:hover{
+    transform: translateY(-5px);
+}
 
 .card img{
     width: 150px;
@@ -145,3 +149,35 @@
     background-color: var(--cor03)
 }
 
+/*FORMATANDO LINKS*/
+#menu a:link{
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor02);
+}
+
+#menu a:visited{
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor02);
+}
+
+#menu a:hover{
+    font-size: 1.6em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor03);
+}
+
+#menu a:active{
+    font-size: 1.6em;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: var(--cor01);
+}
