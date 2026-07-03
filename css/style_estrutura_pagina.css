@@ -12,7 +12,7 @@
 
 /* CRIANDO VARIÁVEIS*/
 :root{
-    --cor01: #671d92;
+    --cor01: #8640af;
     --cor02: #945fb3;
     --cor03: #ceaee0;
     --branca: #ffffff;
@@ -30,7 +30,8 @@
     justify-content: space-between;
     align-items: center;
     padding:  20px;
-    height: 60px;
+    height: 100px;
+    
 }
 
 /*CONFIGURANDO MENU NA HORIZONTAL*/
@@ -43,4 +44,17 @@
 #menu ul img{
     width: 25px;
     height: 25px;
+}
+
+/* FORMATANDO SECTION pesquisa*/
+#pesquisa{
+    height: 200px;
+    background-color: var(--cor01);
+}
+
+#pesquisa input{
+    width: 700px;
+    height: 80px;
+    background-color: var(--branca);
+    border-radius: 8px;
 }
