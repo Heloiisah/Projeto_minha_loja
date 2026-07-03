@@ -12,8 +12,8 @@
 
 /* CRIANDO VARIÁVEIS*/
 :root{
-    --cor01: #8640af;
-    --cor02: #945fb3;
+    --cor01: #a264c5;
+    --cor02: #843ead;
     --cor03: #ceaee0;
     --branca: #ffffff;
 }
@@ -50,6 +50,9 @@
 #pesquisa{
     height: 200px;
     background-color: var(--cor01);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #pesquisa input{
@@ -57,4 +60,20 @@
     height: 80px;
     background-color: var(--branca);
     border-radius: 8px;
+    padding: 10px;
+    font-size: 1.4em;
+    color: var(--cor02);
+}
+
+#pesquisa input::placeholder{
+    font-size: 1.3em;
+    font-style: italic;
+    color: var(--cor02);
+}
+
+/*FORMATANDO OS CARDS*/
+#cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
