@@ -181,3 +181,134 @@
     text-decoration: none;
     color: var(--cor01);
 }
+
+/*=========================
+        PÁGINA SOBRE
+=========================*/
+
+#sobre{
+    width:900px;
+    margin:40px auto;
+    padding:40px;
+    background-color:var(--branca);
+    border:2px solid var(--cor03);
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+#sobre h1{
+    text-align:center;
+    color:var(--cor02);
+    font-size:2em;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    margin-bottom:30px;
+}
+
+#sobre p{
+    font-size:18px;
+    line-height:1.8;
+    text-align:justify;
+    margin-bottom:20px;
+    color:#444;
+}
+
+#sobre strong{
+    color:var(--cor02);
+}
+
+@media(max-width:768px){
+
+    #sobre{
+        width:95%;
+        padding:20px;
+    }
+
+    #sobre h1{
+        font-size:1.5em;
+    }
+
+    #sobre p{
+        font-size:16px;
+    }
+
+}
+
+/*==========================
+        CARRINHO
+==========================*/
+
+#carrinho{
+    width:1000px;
+    margin:40px auto;
+    padding:30px;
+    background:var(--branca);
+    border-radius:10px;
+    border:1px solid var(--cor03);
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+#carrinho h1{
+    text-align:center;
+    color:var(--cor02);
+    margin-bottom:30px;
+    text-transform:uppercase;
+    letter-spacing:3px;
+}
+
+#carrinho table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+#carrinho th{
+    background:var(--cor02);
+    color:white;
+    padding:15px;
+}
+
+#carrinho td{
+    text-align:center;
+    padding:15px;
+    border-bottom:1px solid #ddd;
+}
+
+#carrinho img{
+    width:80px;
+    height:80px;
+    object-fit:contain;
+}
+
+#total{
+    margin-top:30px;
+    text-align:right;
+}
+
+#total h2{
+    color:var(--cor02);
+    margin-bottom:20px;
+}
+
+#total span{
+    color:var(--cor01);
+}
+
+#total button{
+    width:220px;
+    height:45px;
+    border:none;
+    border-radius:5px;
+    background:var(--cor03);
+    color:var(--cor01);
+    font-weight:bold;
+    text-transform:uppercase;
+    cursor:pointer;
+}
+
+#total button:hover{
+    background:var(--cor02);
+    color:white;
+}
+
+
+
