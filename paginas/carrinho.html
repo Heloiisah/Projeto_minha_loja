@@ -15,9 +15,12 @@
 
         <header id="cabecalho">
 
-            <div id="logo">
-                Heloisa Personalizados
-            </div>
+            
+    <div id="logo">
+        <h1>HELOISA</h1>
+        <h2>Personalizados</h2>
+        <p>Criando presentes únicos</p>
+    </div>
 
             <nav id="menu">
                 <ul>
@@ -59,45 +62,85 @@
 
         <section id="carrinho">
 
-            <h1>Meu Carrinho</h1>
+            <div id="listaProdutos">
 
-            <table>
+                <h1>Meu Carrinho</h1>
 
-                <tr>
-                    <th>Produto</th>
-                    <th>Imagem</th>
-                    <th>Quantidade</th>
-                    <th>Preço</th>
-                    <th>Subtotal</th>
-                </tr>
+                <table>
 
-                <tr>
-                    <td>Agenda Personalizada</td>
-                    <td>
-                        <img src="../imagens/agenda.png" alt="Agenda">
-                    </td>
-                    <td>2</td>
-                    <td>R$ 40,00</td>
-                    <td>R$ 80,00</td>
-                </tr>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Imagem</th>
+                        <th>Quantidade</th>
+                        <th>Preço</th>
+                        <th>Subtotal</th>
+                    </tr>
 
-                <tr>
-                    <td>Caneca Colorida</td>
-                    <td>
-                        <img src="../imagens/caneca colorida.png" alt="Caneca Colorida">
-                    </td>
-                    <td>1</td>
-                    <td>R$ 30,00</td>
-                    <td>R$ 30,00</td>
-                </tr>
+                    <tr>
+                        <td>Agenda Personalizada</td>
 
-            </table>
+                        <td>
+                            <img src="../imagens/agenda.png" alt="Agenda Personalizada">
+                        </td>
 
-            <div id="total">
-                <h2>Total: <span>R$ 110,00</span></h2>
+                        <td>2</td>
 
-                <button>Finalizar Compra</button>
+                        <td>R$ 40,00</td>
+
+                        <td>R$ 80,00</td>
+                    </tr>
+
+                    <tr>
+                        <td>Caneca Colorida</td>
+
+                        <td>
+                            <img src="../imagens/caneca colorida.png" alt="Caneca Colorida">
+                        </td>
+
+                        <td>1</td>
+
+                        <td>R$ 30,00</td>
+
+                        <td>R$ 30,00</td>
+                    </tr>
+
+                </table>
+
             </div>
+
+            <aside id="resumo">
+
+                <h2>Resumo da Compra</h2>
+
+                <div class="boxResumo">
+                    <strong>CEP</strong>
+                    <input type="text" placeholder="Digite seu CEP">
+                </div>
+
+                <div class="boxResumo">
+                    <strong>Valor dos Produtos</strong>
+                    <p>R$ 110,00</p>
+                </div>
+
+                <div class="boxResumo">
+                    <strong>Frete</strong>
+                    <p>R$ 15,00</p>
+                </div>
+
+                <div class="boxResumo">
+                    <strong>Total</strong>
+                    <h3>R$ 125,00</h3>
+                </div>
+
+                <a href="../index.html" class="btnContinuar">
+                    Continuar Comprando
+                </a>
+
+                <button class="btnFinalizar">
+                    Finalizar Compra
+                </button>
+
+            </aside>
 
         </section>
 

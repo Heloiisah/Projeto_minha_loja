@@ -182,9 +182,7 @@
     color: var(--cor01);
 }
 
-/*=========================
-        PÁGINA SOBRE
-=========================*/
+/*PÁGINA SOBRE*/
 
 #sobre{
     width:900px;
@@ -234,81 +232,220 @@
 
 }
 
-/*==========================
-        CARRINHO
-==========================*/
+/* CARRINHO*/
 
 #carrinho{
-    width:1000px;
+    width:1100px;
+    max-width:95%;
     margin:40px auto;
-    padding:30px;
-    background:var(--branca);
-    border-radius:10px;
-    border:1px solid var(--cor03);
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    display:flex;
+    gap:30px;
+    align-items:flex-start;
 }
 
-#carrinho h1{
+/* PRODUTOS*/
+
+#listaProdutos{
+    flex:3;
+    background:var(--branca);
+    padding:25px;
+    border-radius:15px;
+    border:1px solid #e5e5e5;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+#listaProdutos h1{
     text-align:center;
     color:var(--cor02);
-    margin-bottom:30px;
+    margin-bottom:25px;
     text-transform:uppercase;
-    letter-spacing:3px;
+    letter-spacing:2px;
 }
 
-#carrinho table{
+#listaProdutos table{
     width:100%;
     border-collapse:collapse;
 }
 
-#carrinho th{
+#listaProdutos th{
     background:var(--cor02);
-    color:white;
+    color:#fff;
     padding:15px;
+    font-size:15px;
 }
 
-#carrinho td{
+#listaProdutos td{
+    padding:18px 12px;
     text-align:center;
-    padding:15px;
-    border-bottom:1px solid #ddd;
+    border-bottom:1px solid #ececec;
 }
 
-#carrinho img{
-    width:80px;
-    height:80px;
+#listaProdutos tr:hover{
+    background:#faf7fd;
+}
+
+#listaProdutos img{
+    width:90px;
+    height:90px;
     object-fit:contain;
 }
 
-#total{
-    margin-top:30px;
-    text-align:right;
+/*RESUMO*/
+
+#resumo{
+    flex:1;
+    background:var(--branca);
+    padding:20px;
+    border-radius:15px;
+    border:1px solid #ddd;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+    position:sticky;
+    top:20px;
 }
 
-#total h2{
+#resumo h2{
+    text-align:center;
     color:var(--cor02);
     margin-bottom:20px;
-}
-
-#total span{
-    color:var(--cor01);
-}
-
-#total button{
-    width:220px;
-    height:45px;
-    border:none;
-    border-radius:5px;
-    background:var(--cor03);
-    color:var(--cor01);
-    font-weight:bold;
     text-transform:uppercase;
+    font-size:22px;
+}
+
+.boxResumo{
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:12px;
+    margin-bottom:15px;
+    background:#fafafa;
+}
+
+.boxResumo strong{
+    display:block;
+    color:var(--cor02);
+    margin-bottom:6px;
+}
+
+.boxResumo p,
+.boxResumo h3{
+    margin:0;
+}
+
+.boxResumo h3{
+    color:var(--cor01);
+    font-size:22px;
+}
+
+#resumo input{
+    width:100%;
+    height:42px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    outline:none;
+    transition:.3s;
+}
+
+#resumo input:focus{
+    border-color:var(--cor02);
+    box-shadow:0 0 8px rgba(106,27,154,.25);
+}
+
+/*BOTÕES*/
+
+.btnContinuar,
+.btnFinalizar{
+    display:block;
+    width:100%;
+    height:48px;
+    line-height:48px;
+
+    margin-top:12px;
+
+    text-align:center;
+    text-decoration:none;
+
+    border:none;
+    border-radius:8px;
+
+    font-size:15px;
+    font-weight:bold;
+
     cursor:pointer;
+    transition:.3s;
 }
 
-#total button:hover{
+/* Continuar Comprando */
+
+.btnContinuar{
+    background:var(--cor03);
+    color:#fff;
+}
+
+.btnContinuar:hover{
+    background:var(--cor04);
+}
+
+/* Finalizar Compra */
+
+.btnFinalizar{
     background:var(--cor02);
-    color:white;
+    color:#fff;
+}
+
+.btnFinalizar:hover{
+    background:var(--cor01);
+}
+
+/*RESPONSIVO*/
+
+@media(max-width:900px){
+
+    #carrinho{
+        flex-direction:column;
+    }
+
+    #listaProdutos,
+    #resumo{
+        width:100%;
+    }
+
+    #resumo{
+        position:static;
+    }
+
 }
 
 
+/*LOGO*/
 
+#logo{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    line-height:1.1;
+}
+
+#logo h1{
+    margin:0;
+    font-size:18px;
+    font-weight:300;
+    letter-spacing:6px;
+    color:#bd8be1;
+    text-transform:uppercase;
+}
+
+#logo h2{
+    margin:2px 0;
+    font-size:32px;
+    font-weight:700;
+    color:var(--cor02);
+}
+
+#logo p{
+    margin:0;
+    font-size:11px;
+    color:#c08adf;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
