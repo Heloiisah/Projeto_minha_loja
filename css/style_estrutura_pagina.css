@@ -41,10 +41,11 @@
 }
 
 /*CONFIGURANDO MENU NA HORIZONTAL*/
-#menu ul {
+#menu ul, #menu-secoes {
     display: flex;
     gap: 30px;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 #menu ul img{
@@ -448,4 +449,30 @@
     color:#c08adf;
     letter-spacing:2px;
     text-transform:uppercase;
+}
+
+
+/*FORMATANDO O MENU DE SEÇÕES*/
+#secoes-produtos{
+    width: 100%;
+    min-height: 100px;
+    background-color: var(--cor02);
+    margin: 20px 0px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lnk-secao:link, .lnk-secao:visited{
+    text-decoration: none;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    color: var(--branca);
+}
+
+.lnk-secao:hover{
+    font-size: 1.3em;
+    text-transform: uppercase;
+    color: var(--branca);
 }
