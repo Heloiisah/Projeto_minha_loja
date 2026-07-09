@@ -456,7 +456,7 @@
 #secoes-produtos{
     width: 100%;
     min-height: 100px;
-    background-color: var(--cor02);
+    background-color: var(--cor01);
     margin: 20px 0px;
     padding: 20px;
     display: flex;
@@ -474,5 +474,5 @@
 .lnk-secao:hover{
     font-size: 1.3em;
     text-transform: uppercase;
-    color: var(--branca);
+    color: var(--cor02);
 }
