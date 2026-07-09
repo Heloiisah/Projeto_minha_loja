@@ -180,3 +180,5 @@ const produtos = [
         secao: "Decoração"
     }
 ];
+
+export{produtos}
