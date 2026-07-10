@@ -6,6 +6,7 @@ const sectionCards = document.querySelector("#cards");
 
 //CARREGANDO OS CARDS
 const listarProdutos = () => {
+    return produtos
     montaCards(produtos)
 }
 
@@ -34,6 +35,22 @@ const carregaSecoes = () => {
 
     //LIMPANDO O ELEMENTO DO DOM
     ulMenuSecoes.innerHTML = ''
+
+
+     //CRIANDO O MENU TODOS
+    const liTodos = document.createElement('li')
+
+    const aTodos = document.createElement('a')
+    aTodos.setAttribute('href', '#')
+    aTodos.setAttribute('class', 'lnk-secao')
+    aTodos.innerHTML = 'TODOS'
+
+    aTodos.addEventListener('click', () => {
+    montaCards(produtos)
+})
+
+     liTodos.appendChild(aTodos)
+    ulMenuSecoes.appendChild(liTodos) 
 
     //CHAMANDO A FUNÇÃO menuSecoes E PERCORRENDO O ARRAY DE SEÇÕES JA SELECIONADAS
     menuSecoes().forEach((elem, i) => {
