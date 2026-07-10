@@ -181,4 +181,4 @@ const produtos = [
     }
 ];
 
-export { produtos };
+export {produtos};
