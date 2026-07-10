@@ -1,4 +1,3 @@
-
 const produtos = [
     {
         id_produto: 1,
@@ -15,8 +14,8 @@ const produtos = [
         valor_unitario: 24.90,
         unidade: "UN",
         caminho_imagem: "../imagens/biblia.png",
-        id_secao: 2,
-        secao: "Religiosos"
+        id_secao: 1,
+        secao: "Papelaria"
     },
     {
         id_produto: 3,
@@ -42,7 +41,7 @@ const produtos = [
         valor_unitario: 34.90,
         unidade: "UN",
         caminho_imagem: "../imagens/caneca aluminio.png",
-        id_secao: 4,
+        id_secao: 2,
         secao: "Canecas"
     },
     {
@@ -51,7 +50,7 @@ const produtos = [
         valor_unitario: 42.90,
         unidade: "UN",
         caminho_imagem: "../imagens/caneca colherr.png",
-        id_secao: 4,
+        id_secao: 2,
         secao: "Canecas"
     },
     {
@@ -60,7 +59,7 @@ const produtos = [
         valor_unitario: 39.90,
         unidade: "UN",
         caminho_imagem: "../imagens/caneca colorida.png",
-        id_secao: 4,
+        id_secao: 2,
         secao: "Canecas"
     },
     {
@@ -69,7 +68,7 @@ const produtos = [
         valor_unitario: 44.90,
         unidade: "UN",
         caminho_imagem: "../imagens/caneca shopp.png",
-        id_secao: 4,
+        id_secao: 2,
         secao: "Canecas"
     },
     {
@@ -78,7 +77,7 @@ const produtos = [
         valor_unitario: 35.90,
         unidade: "UN",
         caminho_imagem: "../imagens/caneca.png",
-        id_secao: 4,
+        id_secao: 2,
         secao: "Canecas"
     },
     {
@@ -87,8 +86,8 @@ const produtos = [
         valor_unitario: 9.90,
         unidade: "UN",
         caminho_imagem: "../imagens/cartao sus.png",
-        id_secao: 5,
-        secao: "Documentos"
+        id_secao: 1,
+        secao: "Papelaria"
     },
     {
         id_produto: 11,
@@ -105,7 +104,7 @@ const produtos = [
         valor_unitario: 69.90,
         unidade: "UN",
         caminho_imagem: "../imagens/garrafa.png",
-        id_secao: 6,
+        id_secao: 4,
         secao: "Garrafas"
     },
     {
@@ -114,7 +113,7 @@ const produtos = [
         valor_unitario: 74.90,
         unidade: "UN",
         caminho_imagem: "../imagens/garrafa2.png",
-        id_secao: 6,
+        id_secao: 4,
         secao: "Garrafas"
     },
     {
@@ -123,7 +122,7 @@ const produtos = [
         valor_unitario: 89.90,
         unidade: "UN",
         caminho_imagem: "../imagens/kit.png",
-        id_secao: 7,
+        id_secao: 5,
         secao: "Kits"
     },
     {
@@ -132,7 +131,7 @@ const produtos = [
         valor_unitario: 79.90,
         unidade: "UN",
         caminho_imagem: "../imagens/kit1.png",
-        id_secao: 7,
+        id_secao: 5,
         secao: "Kits"
     },
     {
@@ -141,7 +140,7 @@ const produtos = [
         valor_unitario: 84.90,
         unidade: "UN",
         caminho_imagem: "../imagens/kit2.png",
-        id_secao: 7,
+        id_secao: 5,
         secao: "Kits"
     },
     {
@@ -150,7 +149,7 @@ const produtos = [
         valor_unitario: 94.90,
         unidade: "UN",
         caminho_imagem: "../imagens/kit3.png",
-        id_secao: 7,
+        id_secao: 5,
         secao: "Kits"
     },
     {
@@ -159,8 +158,8 @@ const produtos = [
         valor_unitario: 29.90,
         unidade: "UN",
         caminho_imagem: "../imagens/mini album.png",
-        id_secao: 8,
-        secao: "Álbuns"
+        id_secao: 1,
+        secao: "Papelaria"
     },
     {
         id_produto: 19,
@@ -168,7 +167,7 @@ const produtos = [
         valor_unitario: 54.90,
         unidade: "UN",
         caminho_imagem: "../imagens/torre.png",
-        id_secao: 9,
+        id_secao: 6,
         secao: "Decoração"
     },
     {
@@ -177,7 +176,7 @@ const produtos = [
         valor_unitario: 59.90,
         unidade: "UN",
         caminho_imagem: "../imagens/torre1.png",
-        id_secao: 9,
+        id_secao: 6,
         secao: "Decoração"
     }
 ];
