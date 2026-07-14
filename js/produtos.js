@@ -1,4 +1,4 @@
-/// IMPORTANDO OS PRODUTOS
+// IMPORTANDO OS PRODUTOS
 import { produtos } from "./lista_produtos.js";
 
 // PEGANDO ELEMENTO DO DOM
@@ -37,29 +37,27 @@ const carregaSecoes = () => {
     aTodos.className = "lnk-secao";
     aTodos.innerHTML = "TODOS";
 
-    aTodos.addEventListener("click", () => {
+    aTodos.addEventListener("click", function () {
         montaCards(produtos);
     });
 
     liTodos.appendChild(aTodos);
     ulMenuSecoes.appendChild(liTodos);
 
-    menuSecoes().forEach((elem) => {
+    menuSecoes().forEach(function (elem) {
 
         const liMenu = document.createElement("li");
 
         const aMenu = document.createElement("a");
-
         aMenu.href = "#";
         aMenu.className = "lnk-secao";
         aMenu.innerHTML = elem.secao;
 
-        aMenu.addEventListener("click", () => {
+        aMenu.addEventListener("click", function () {
             montaCards(filtroProduto(elem.id_secao));
         });
 
         liMenu.appendChild(aMenu);
-
         ulMenuSecoes.appendChild(liMenu);
 
     });
@@ -69,7 +67,9 @@ const carregaSecoes = () => {
 // FILTRO DOS PRODUTOS
 const filtroProduto = (idSecao) => {
 
-    return produtos.filter(elem => elem.id_secao === idSecao);
+    return produtos.filter(function (elem) {
+        return elem.id_secao === idSecao;
+    });
 
 }
 
@@ -78,7 +78,7 @@ const montaCards = (objProdutos) => {
 
     sectionCards.innerHTML = "";
 
-    objProdutos.forEach((elem) => {
+    objProdutos.forEach(function (elem) {
 
         const divCard = document.createElement("div");
         divCard.className = "card";
@@ -92,42 +92,37 @@ const montaCards = (objProdutos) => {
 
         const h2Card = document.createElement("h2");
         h2Card.innerHTML =
-        "R$ " + parseFloat(elem.valor_unitario).toFixed(2).replace(".", ",");
+            "R$ " + Number(elem.valor_unitario).toFixed(2).replace(".", ",");
 
         const btnCard = document.createElement("button");
         btnCard.className = "btn-add";
         btnCard.innerHTML = "Adicionar";
 
         // ADICIONAR AO CARRINHO
-        btnCard.addEventListener("click", () => {
+        btnCard.addEventListener("click", function () {
 
-            let carrinho =
-            JSON.parse(sessionStorage.getItem("carrinhoSessao")) || [];
+            let carrinho = JSON.parse(sessionStorage.getItem("carrinhoSessao")) || [];
 
             let existe = false;
 
-            carrinho.forEach(function(item){
+            carrinho.forEach(function (item) {
 
-                if(item.descricao_produto == elem.descricao_produto){
+                if (item.descricao_produto == elem.descricao_produto) {
 
                     item.quantidade++;
-
                     existe = true;
 
                 }
 
             });
 
-            if(!existe){
+            if (!existe) {
 
                 carrinho.push({
 
                     descricao_produto: elem.descricao_produto,
-
                     caminho_imagem: elem.caminho_imagem,
-
-                    valor_unitario: elem.valor_unitario,
-
+                    valor_unitario: Number(elem.valor_unitario),
                     quantidade: 1
 
                 });
@@ -139,7 +134,8 @@ const montaCards = (objProdutos) => {
                 JSON.stringify(carrinho)
             );
 
-            alert("Produto adicionado ao carrinho!");
+            // Vai para o carrinho
+            window.location.href = "paginas/carrinho.html";
 
         });
 
