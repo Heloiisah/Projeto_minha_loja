@@ -181,3 +181,25 @@ select:focus{
     }
 
 }
+.cadastro-link{
+    margin-top:25px;
+    text-align:center;
+}
+
+.cadastro-link p{
+    margin-bottom:8px;
+    color:#666;
+    font-size:15px;
+}
+
+.cadastro-link a{
+    color:var(--cor02);
+    font-weight:bold;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.cadastro-link a:hover{
+    color:var(--cor01);
+    text-decoration:underline;
+}

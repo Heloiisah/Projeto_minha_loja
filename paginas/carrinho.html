@@ -8,50 +8,52 @@
 
     <link rel="stylesheet" href="../css/style_estrutura_pagina.css">
 </head>
+  
 
+<script src="../js/carrinho.js"></script>
+ 
 <body>
 
     <main id="geral">
 
         <header id="cabecalho">
 
-            
-    <div id="logo">
-        <h1>HELOISA</h1>
-        <h2>Personalizados</h2>
-        <p>Criando presentes únicos</p>
-    </div>
+            <div id="logo">
+                <h1>HELOISA</h1>
+                <h2>Personalizados</h2>
+                <p>Criando presentes únicos</p>
+            </div>
 
             <nav id="menu">
                 <ul>
 
                     <li>
                         <a href="../index.html">
-                            <img src="../imagens/icones/inicio.png" alt="Início" title="Início">
+                            <img src="../imagens/icones/inicio.png" alt="Início">
                         </a>
                     </li>
 
                     <li>
                         <a href="sobre.html">
-                            <img src="../imagens/icones/sobre.png" alt="Sobre" title="Sobre">
+                            <img src="../imagens/icones/sobre.png" alt="Sobre">
                         </a>
                     </li>
 
                     <li>
                         <a href="login.html">
-                            <img src="../imagens/icones/login.png" alt="Login" title="Login">
+                            <img src="../imagens/icones/login.png" alt="Login">
                         </a>
                     </li>
 
                     <li>
                         <a href="cadastro.html">
-                            <img src="../imagens/icones/cadastro.png" alt="Cadastro" title="Cadastro">
+                            <img src="../imagens/icones/cadastro.png" alt="Cadastro">
                         </a>
                     </li>
 
                     <li>
                         <a href="carrinho.html">
-                            <img src="../imagens/icones/carrinho.png" alt="Carrinho" title="Carrinho">
+                            <img src="../imagens/icones/carrinho.png" alt="Carrinho">
                         </a>
                     </li>
 
@@ -76,34 +78,6 @@
                         <th>Subtotal</th>
                     </tr>
 
-                    <tr>
-                        <td>Agenda Personalizada</td>
-
-                        <td>
-                            <img src="../imagens/agenda.png" alt="Agenda Personalizada">
-                        </td>
-
-                        <td>2</td>
-
-                        <td>R$ 40,00</td>
-
-                        <td>R$ 80,00</td>
-                    </tr>
-
-                    <tr>
-                        <td>Caneca Colorida</td>
-
-                        <td>
-                            <img src="../imagens/caneca colorida.png" alt="Caneca Colorida">
-                        </td>
-
-                        <td>1</td>
-
-                        <td>R$ 30,00</td>
-
-                        <td>R$ 30,00</td>
-                    </tr>
-
                 </table>
 
             </div>
@@ -114,22 +88,24 @@
 
                 <div class="boxResumo">
                     <strong>CEP</strong>
-                    <input type="text" placeholder="Digite seu CEP">
+                    <input type="text"
+                           id="cep"
+                           placeholder="Digite seu CEP">
                 </div>
 
                 <div class="boxResumo">
                     <strong>Valor dos Produtos</strong>
-                    <p>R$ 110,00</p>
+                    <p id="valorProdutos">R$ 0,00</p>
                 </div>
 
                 <div class="boxResumo">
                     <strong>Frete</strong>
-                    <p>R$ 15,00</p>
+                    <p id="valorFrete">R$ 15,00</p>
                 </div>
 
                 <div class="boxResumo">
                     <strong>Total</strong>
-                    <h3>R$ 125,00</h3>
+                    <h3 id="valorTotal">R$ 0,00</h3>
                 </div>
 
                 <a href="../index.html" class="btnContinuar">
