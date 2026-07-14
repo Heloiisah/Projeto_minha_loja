@@ -1,106 +1,114 @@
-// Aguarda carregar toda a página
-document.addEventListener("DOMContentLoaded", () => {
+// FORMULÁRIO
+const formulario = document.querySelector("#frm-pessoa");
 
-    const formulario = document.getElementById("frm-pessoa");
+// CAMPOS
+const campoCpf = document.querySelector("#cpf");
+const campoTelefone = document.querySelector("#telefone");
+const campoCep = document.querySelector("#cep");
 
-    formulario.addEventListener("submit", function(e){
+// MÁSCARA DO CPF
+campoCpf.addEventListener("input", function(){
 
-        e.preventDefault();
+    let valor = campoCpf.value;
 
-        // Campos
-        const nome = document.getElementById("nome").value.trim();
-        const cpf = document.getElementById("cpf").value.trim();
-        const data = document.getElementById("data").value;
-        const telefone = document.getElementById("telefone").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const endereco = document.getElementById("endereco").value.trim();
-        const bairro = document.getElementById("bairro").value.trim();
-        const cidade = document.getElementById("cidade").value.trim();
-        const estado = document.getElementById("estado").value;
-        const cep = document.getElementById("cep").value.trim();
-        const senha = document.getElementById("senha").value;
-        const confirmar = document.getElementById("confirmar").value;
-        const novidades = document.getElementById("novidades").checked;
+    valor = valor.replace(/\D/g, "");
+    valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+    valor = valor.replace(/(\d{3})(\d)/, "$1.$2");
+    valor = valor.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
 
-        // Validação dos campos
-        if(
-            nome === "" ||
-            cpf === "" ||
-            data === "" ||
-            telefone === "" ||
-            email === "" ||
-            endereco === "" ||
-            bairro === "" ||
-            cidade === "" ||
-            estado === "" ||
-            senha === "" ||
-            confirmar === ""
-        ){
-            alert("Preencha todos os campos obrigatórios.");
-            return;
-        }
+    campoCpf.value = valor;
 
-        // CPF
-        const cpfRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+});
 
-        if(!cpfRegex.test(cpf)){
-            alert("CPF inválido.\nUse o formato 000.000.000-00");
-            return;
-        }
+// MÁSCARA DO TELEFONE
+campoTelefone.addEventListener("input", function(){
 
-        // Telefone
-        const telRegex = /^\(\d{2}\)\s\d{5}-\d{4}$/;
+    let valor = campoTelefone.value;
 
-        if(!telRegex.test(telefone)){
-            alert("Telefone inválido.\nUse o formato (79) 99999-9999");
-            return;
-        }
+    valor = valor.replace(/\D/g, "");
+    valor = valor.replace(/(\d{2})(\d)/, "($1) $2");
+    valor = valor.replace(/(\d{5})(\d)/, "$1-$2");
 
-        // CEP
-        if(cep !== ""){
+    campoTelefone.value = valor;
 
-            const cepRegex = /^\d{5}-\d{3}$/;
+});
 
-            if(!cepRegex.test(cep)){
-                alert("CEP inválido.");
-                return;
-            }
+// MÁSCARA DO CEP
+campoCep.addEventListener("input", function(){
 
-        }
+    let valor = campoCep.value;
 
-        // Senhas
-        if(senha !== confirmar){
-            alert("As senhas não coincidem.");
-            return;
-        }
+    valor = valor.replace(/\D/g, "");
+    valor = valor.replace(/(\d{5})(\d)/, "$1-$2");
 
-        // Objeto do cliente
-        const cliente = {
-            nome,
-            cpf,
-            data,
-            telefone,
-            email,
-            endereco,
-            bairro,
-            cidade,
-            estado,
-            cep,
-            senha,
-            novidades
-        };
+    campoCep.value = valor;
 
-        // Recupera lista
-        let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
+});
 
-        clientes.push(cliente);
+// CADASTRO
+formulario.addEventListener("submit", function(e){
 
-        localStorage.setItem("clientes", JSON.stringify(clientes));
+    e.preventDefault();
 
-        alert("Cadastro realizado com sucesso!");
+    const nome = document.querySelector("#nome").value.trim();
+    const cpf = document.querySelector("#cpf").value.trim();
+    const data = document.querySelector("#data").value;
+    const telefone = document.querySelector("#telefone").value.trim();
+    const email = document.querySelector("#email").value.trim();
+    const endereco = document.querySelector("#endereco").value.trim();
+    const bairro = document.querySelector("#bairro").value.trim();
+    const cidade = document.querySelector("#cidade").value.trim();
+    const estado = document.querySelector("#estado").value;
+    const cep = document.querySelector("#cep").value.trim();
+    const senha = document.querySelector("#senha").value;
+    const confirmar = document.querySelector("#confirmar").value;
+    const novidades = document.querySelector("#novidades").checked;
 
-        formulario.reset();
+    if(
+        nome == "" ||
+        cpf == "" ||
+        data == "" ||
+        telefone == "" ||
+        email == "" ||
+        endereco == "" ||
+        bairro == "" ||
+        cidade == "" ||
+        estado == "" ||
+        senha == "" ||
+        confirmar == ""
+    ){
+        alert("Preencha todos os campos.");
+        return;
+    }
 
-    });
+    if(senha != confirmar){
+        alert("As senhas não coincidem.");
+        return;
+    }
+
+    const cliente = {
+        nome,
+        cpf,
+        data,
+        telefone,
+        email,
+        endereco,
+        bairro,
+        cidade,
+        estado,
+        cep,
+        senha,
+        novidades
+    };
+
+    let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
+
+    clientes.push(cliente);
+
+    localStorage.setItem("clientes", JSON.stringify(clientes));
+
+    alert("Cadastro realizado com sucesso!");
+
+    formulario.reset();
 
 });
