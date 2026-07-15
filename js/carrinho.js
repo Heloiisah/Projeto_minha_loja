@@ -22,7 +22,19 @@ const item = (objProduto) => {
 //FUNÇÃO PARA ADICIONAR UM ITEM
 const addItem = (objItem) => {
 
-    itensCarrinho.push(item(objItem))
+    const pos = itensCarrinho.findIndex(
+        elem => elem.id_produto == objItem.id_produto
+    )
+
+    if (pos == -1) {
+
+        itensCarrinho.push(item(objItem))
+
+    } else {
+
+        itensCarrinho[pos].quantidade++
+
+    }
 
     sessionStorage.setItem(
         "carrinhoSessao",
@@ -41,6 +53,7 @@ const listItens = () => {
     return listaItens
 
 }
+
 //FUNÇÃO PARA REMOVER UM ITEM
 const removeItem = (pos) => {
 
