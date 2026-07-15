@@ -1,7 +1,8 @@
-// Recupera os produtos do SessionStorage
+// RECUPERA OS PRODUTOS
 let itensCarrinho = JSON.parse(sessionStorage.getItem("carrinhoSessao")) || [];
 
-// Carrega a página
+// CARREGA A PÁGINA
+
 window.onload = function () {
 
     listarItens();
@@ -16,7 +17,7 @@ window.onload = function () {
 
 };
 
-// Lista os produtos
+// LISTA OS PRODUTOS
 function listarItens() {
 
     let tabela = document.querySelector("#listaProdutos table");
@@ -27,7 +28,8 @@ function listarItens() {
 
     }
 
-    // Limpa a tabela
+   // LIMPA A TABELA
+
     while (tabela.rows.length > 1) {
 
         tabela.deleteRow(1);
@@ -51,14 +53,14 @@ function listarItens() {
         let coluna5 = linha.insertCell();
         let coluna6 = linha.insertCell();
 
-        // Produto
+       // PRODUTO
         coluna1.innerHTML = item.descricao_produto;
 
-        // Imagem
+        // IMAGEM
         coluna2.innerHTML =
             "<img src='" + item.caminho_imagem + "' width='80'>";
 
-        // Quantidade
+        // QUANTIDADE
         coluna3.innerHTML =
             "<div class='controleQuantidade'>" +
             "<button onclick='alterarQuantidade(" + indice + ", -1)'>-</button>" +
@@ -66,21 +68,21 @@ function listarItens() {
             "<button onclick='alterarQuantidade(" + indice + ", 1)'>+</button>" +
             "</div>";
 
-        // Valor Unitário
+        // VALOR UNITÁRIO
         coluna4.innerHTML =
             "R$ " +
             Number(item.valor_unitario)
                 .toFixed(2)
                 .replace(".", ",");
 
-        // Subtotal
+       // SUBTOTAL
         coluna5.innerHTML =
             "R$ " +
             subtotal
                 .toFixed(2)
                 .replace(".", ",");
 
-        // Remover
+        // REMOVER
         coluna6.innerHTML =
             "<button class='btnRemover' onclick='removerItem(" + indice + ")'>✖</button>";
 
@@ -99,7 +101,7 @@ function listarItens() {
 
 }
 
-// Aumenta ou diminui quantidade
+// AUMENTA OU DIMINUI QUANTIDADE
 function alterarQuantidade(indice, valor) {
 
     itensCarrinho[indice].quantidade =
@@ -120,7 +122,7 @@ function alterarQuantidade(indice, valor) {
 
 }
 
-// Remove produto
+// REMOVE PRODUTO
 function removerItem(indice) {
 
     let resposta = confirm("Deseja remover este produto do carrinho?");
@@ -140,7 +142,7 @@ function removerItem(indice) {
 
 }
 
-// Finalizar compra
+// FINALIZAR COMPRA
 function finalizarCompra() {
 
     let cep = document.querySelector("#cep").value;
