@@ -6,7 +6,7 @@ window.onload = function () {
 
     listarItens();
 
-    const btnFinalizar = document.querySelector(".btnFinalizar");
+    let btnFinalizar = document.querySelector(".btnFinalizar");
 
     btnFinalizar.onclick = function () {
 
@@ -19,10 +19,12 @@ window.onload = function () {
 // Lista os produtos
 function listarItens() {
 
-    const tabela = document.querySelector("#listaProdutos table");
+    let tabela = document.querySelector("#listaProdutos table");
 
-    if (!tabela) {
+    if (tabela == null) {
+
         return;
+
     }
 
     // Limpa a tabela
@@ -66,13 +68,15 @@ function listarItens() {
 
         // Valor Unitário
         coluna4.innerHTML =
-            "R$ " + Number(item.valor_unitario)
+            "R$ " +
+            Number(item.valor_unitario)
                 .toFixed(2)
                 .replace(".", ",");
 
         // Subtotal
         coluna5.innerHTML =
-            "R$ " + subtotal
+            "R$ " +
+            subtotal
                 .toFixed(2)
                 .replace(".", ",");
 
@@ -82,18 +86,16 @@ function listarItens() {
 
     });
 
-    let frete = 15;
+    let frete = 10;
 
-    document.getElementById("valorProdutos").innerHTML =
+    document.querySelector("#valorProdutos").innerHTML =
         "R$ " + total.toFixed(2).replace(".", ",");
 
-    document.getElementById("valorFrete").innerHTML =
+    document.querySelector("#valorFrete").innerHTML =
         "R$ " + frete.toFixed(2).replace(".", ",");
 
-    document.getElementById("valorTotal").innerHTML =
-        "R$ " + (total + frete)
-            .toFixed(2)
-            .replace(".", ",");
+    document.querySelector("#valorTotal").innerHTML =
+        "R$ " + (total + frete).toFixed(2).replace(".", ",");
 
 }
 
@@ -141,7 +143,7 @@ function removerItem(indice) {
 // Finalizar compra
 function finalizarCompra() {
 
-    let cep = document.getElementById("cep").value;
+    let cep = document.querySelector("#cep").value;
 
     if (cep == "") {
 
