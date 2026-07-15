@@ -88,10 +88,7 @@ const listarItens = () => {
         coluna4.innerHTML = "R$ " + Number(item.valor_unitario) .toFixed(2) .replace(".", ",");
 
         // SUBTOTAL
-        coluna5.innerHTML =
-            "R$ " + subtotal
-                .toFixed(2)
-                .replace(".", ",");
+        coluna5.innerHTML = "R$ " + subtotal .toFixed(2) .replace(".", ",");
 
         // REMOVER
         coluna6.innerHTML =
