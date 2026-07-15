@@ -1,0 +1,235 @@
+/* IMPORTANDO OS SELETORES DO ARQUIVO style_estrutura_pagina.css */
+@import url(style_estrutura_pagina.css);
+
+/* FORMATANDO A SECTION CARRINHO */
+#carrinho{
+    width:1100px;
+    max-width:95%;
+    margin:40px auto;
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:30px;
+}
+
+/* FORMATANDO A SECTION LISTA DE PRODUTOS */
+#listaProdutos{
+    flex:3;
+    background:var(--branca);
+    padding:25px;
+    border:1px solid #e5e5e5;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.12);
+}
+
+#listaProdutos h1{
+    text-align:center;
+    color:var(--cor02);
+    margin-bottom:25px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+#listaProdutos table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+#listaProdutos th{
+    background:var(--cor02);
+    color:var(--branca);
+    padding:15px;
+    font-size:15px;
+}
+
+#listaProdutos td{
+    padding:18px 12px;
+    text-align:center;
+    vertical-align:middle;
+    border-bottom:1px solid #ececec;
+}
+
+#listaProdutos td:first-child{
+    text-align:left;
+}
+
+#listaProdutos tr:hover{
+    background:#faf7fd;
+}
+
+#listaProdutos img{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+}
+
+/* FORMATANDO O CONTROLE DE QUANTIDADE */
+.controleQuantidade{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+}
+
+.controleQuantidade button{
+    width:25px;
+    height:25px;
+    border:1px solid var(--cor02);
+    background:var(--branca);
+    color:var(--cor02);
+    border-radius:3px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.controleQuantidade button:hover{
+    background:#9d6edb;
+    color:var(--branca);
+}
+
+.controleQuantidade input{
+    width:35px;
+    height:25px;
+    text-align:center;
+    border:1px solid var(--cor02);
+    border-radius:3px;
+}
+
+.quantidade{
+    width:40px;
+    height:28px;
+    text-align:center;
+    border:1px solid var(--cor02);
+    border-radius:3px;
+    background:var(--branca);
+    outline:none;
+    font-size:14px;
+}
+
+/* FORMATANDO O BOTÃO REMOVER */
+.btnRemover{
+    background:var(--cor02);
+    color:var(--branca);
+    border:none;
+    padding:8px 15px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btnRemover:hover{
+    background:#972020;
+}
+
+/* FORMATANDO A DIV RESUMO */
+#resumo{
+    flex:1;
+    background:var(--branca);
+    padding:20px;
+    border:1px solid #ddd;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+    position:sticky;
+    top:20px;
+}
+
+#resumo h2{
+    text-align:center;
+    color:var(--cor02);
+    margin-bottom:20px;
+    text-transform:uppercase;
+    font-size:22px;
+}
+
+.boxResumo{
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:12px;
+    margin-bottom:15px;
+    background:#fafafa;
+}
+
+.boxResumo strong{
+    display:block;
+    color:var(--cor02);
+    margin-bottom:6px;
+}
+
+.boxResumo p,
+.boxResumo h3{
+    margin:0;
+}
+
+.boxResumo h3{
+    color:var(--cor01);
+    font-size:22px;
+}
+
+#resumo input{
+    width:100%;
+    height:42px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    outline:none;
+    transition:.3s;
+}
+
+#resumo input:focus{
+    border-color:var(--cor02);
+    box-shadow:0 0 8px rgba(106,27,154,.25);
+}
+
+/* FORMATANDO OS BOTÕES */
+.btnContinuar,
+.btnFinalizar{
+    width:100%;
+    height:48px;
+    margin-top:12px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:bold;
+    text-decoration:none;
+    display:block;
+    line-height:48px;
+    text-align:center;
+    transition:.3s;
+}
+
+.btnContinuar{
+    background:var(--cor03);
+    color:var(--branca);
+}
+
+.btnContinuar:hover{
+    background:var(--cor01);
+}
+
+.btnFinalizar{
+    background:var(--cor02);
+    color:var(--branca);
+}
+
+.btnFinalizar:hover{
+    background:var(--cor01);
+}
+
+/* RESPONSIVIDADE */
+@media(max-width:900px){
+
+    #carrinho{
+        flex-direction:column;
+    }
+
+    #listaProdutos,
+    #resumo{
+        width:100%;
+    }
+
+    #resumo{
+        position:static;
+    }
+
+}

@@ -2,11 +2,14 @@
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Login - Heloisa Personalizados</title>
 
     <link rel="stylesheet" href="../css/style_formulario.css">
+
 </head>
 
 <body>
@@ -16,12 +19,17 @@
         <header id="cabecalho">
 
             <div id="logo">
+
                 <h1>HELOISA</h1>
+
                 <h2>Personalizados</h2>
+
                 <p>Criando presentes únicos</p>
+
             </div>
 
             <nav id="menu">
+
                 <ul>
 
                     <li>
@@ -55,35 +63,50 @@
                     </li>
 
                 </ul>
+
             </nav>
 
         </header>
 
-        <section id="form">
+        <section id="pesquisa">
 
             <h3>Login</h3>
+
+        </section>
+
+        <section id="form">
 
             <form id="frm-pessoa">
 
                 <label for="email">E-mail</label>
+
                 <input
                     class="input001"
                     type="email"
+                    name="email"
                     id="email"
                     placeholder="Digite seu e-mail"
                     required>
 
                 <label for="senha">Senha</label>
+
                 <input
                     class="input001"
                     type="password"
+                    name="senha"
                     id="senha"
                     placeholder="Digite sua senha"
                     required>
 
                 <label>
-                    <input type="checkbox" id="lembrar">
+
+                    <input
+                        type="checkbox"
+                        name="lembrar"
+                        id="lembrar">
+
                     Lembrar meu acesso
+
                 </label>
 
                 <input
@@ -97,8 +120,15 @@
                     class="btnLimpar">
 
                 <div class="cadastro-link">
+
                     <p>Não possui uma conta?</p>
-                    <a href="cadastro.html">Cadastre-se aqui</a>
+
+                    <a href="cadastro.html">
+
+                        Cadastre-se aqui
+
+                    </a>
+
                 </div>
 
             </form>
@@ -106,13 +136,18 @@
         </section>
 
         <footer id="rodape">
+
             <h2>&copy; Heloisa Personalizados</h2>
-            <p>Formas de pagamento: Pix, Cartão de Débito e Crédito.</p>
+
+            <p>
+                Formas de pagamento: Pix, Cartão de Débito e Crédito.
+            </p>
+
         </footer>
 
     </main>
 
-    <script src="../js/login.js"></script>
+    <script src="../js/login.js" defer></script>
 
 </body>
 
