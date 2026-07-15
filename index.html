@@ -7,74 +7,80 @@
     <title>Heloisa Personalizados</title>
 
     <link rel="stylesheet" href="css/style_estrutura_pagina.css">
-</head>
 
-<script src="js/produtos.js" type="module" defer></script>
+    <script src="js/produtos.js" type="module" defer></script>
+</head>
 
 <body>
 
     <main id="geral">
 
-       <header id="cabecalho">
+        <header id="cabecalho">
 
-    <div id="logo">
-        <h1>HELOISA</h1>
-        <h2>Personalizados</h2>
-        <p>Criando presentes únicos</p>
-    </div>
+            <div id="logo">
+                <h1>HELOISA</h1>
+                <h2>Personalizados</h2>
+                <p>Criando presentes únicos</p>
+            </div>
 
+            <nav id="menu">
+                <ul>
 
-    
+                    <li>
+                        <a href="index.html">
+                            <img src="imagens/icones/inicio.png" alt="Início" title="Início">
+                        </a>
+                    </li>
 
-    <nav id="menu">
-        <ul>
+                    <li>
+                        <a href="paginas/sobre.html">
+                            <img src="imagens/icones/sobre.png" alt="Sobre" title="Sobre">
+                        </a>
+                    </li>
 
-            <li>
-                <a href="index.html">
-                    <img src="imagens/icones/inicio.png" alt="Início" title="Início">
-                </a>
-            </li>
+                    <li>
+                        <a href="paginas/login.html">
+                            <img src="imagens/icones/login.png" alt="Login" title="Login">
+                        </a>
+                    </li>
 
-            <li>
-                <a href="paginas/sobre.html">
-                    <img src="imagens/icones/sobre.png" alt="Sobre" title="Sobre">
-                </a>
-            </li>
+                    <li>
+                        <a href="paginas/cadastro.html">
+                            <img src="imagens/icones/cadastro.png" alt="Cadastro" title="Cadastro">
+                        </a>
+                    </li>
 
-            <li>
-                <a href="paginas/login.html">
-                    <img src="imagens/icones/login.png" alt="Login" title="Login">
-                </a>
-            </li>
+                    <li>
+                        <a href="paginas/carrinho.html">
+                            <img src="imagens/icones/carrinho.png" alt="Carrinho" title="Carrinho">
+                        </a>
+                    </li>
 
-            <li>
-                <a href="paginas/cadastro.html">
-                    <img src="imagens/icones/cadastro.png" alt="Cadastro" title="Cadastro">
-                </a>
-            </li>
+                </ul>
+            </nav>
 
-            <li>
-                <a href="paginas/carrinho.html">
-                    <img src="imagens/icones/carrinho.png" alt="Carrinho" title="Carrinho">
-                </a>
-            </li>
-
-        </ul>
-    </nav>
-
-</header>
+        </header>
 
         <section id="pesquisa">
-            <input type="text" placeholder="Digite o produto desejado...">
+
+            <!-- ALTERAÇÃO AQUI -->
+            <input
+                type="text"
+                id="txt-pesquisa"
+                placeholder="Digite o produto desejado..."
+                autocomplete="off">
+
         </section>
 
         <section id="secoes-produtos">
             <ul id="menu-secoes">
-                <li><a href="#" class="lnk-secao">Seção 01</a></li>
-                <li><a href="#" class="lnk-secao">Seção 02</a></li>
-                <li><a href="#" class="lnk-secao">Seção 03</a></li>
-                <li><a href="#" class="lnk-secao">Seção 04</a></li>
-                <li><a href="#" class="lnk-secao">Seção 05</a></li>
+                <li><a href="#" class="lnk-secao">TODOS</a></li>
+                <li><a href="#" class="lnk-secao">PAPELARIA</a></li>
+                <li><a href="#" class="lnk-secao">BRINDES</a></li>
+                <li><a href="#" class="lnk-secao">CANECAS</a></li>
+                <li><a href="#" class="lnk-secao">GARRAFAS</a></li>
+                <li><a href="#" class="lnk-secao">KITS</a></li>
+                <li><a href="#" class="lnk-secao">DECORAÇÃO</a></li>
             </ul>
         </section>
 
@@ -185,7 +191,8 @@
             <p>Formas de pagamento: Pix, Cartão de Débito e Crédito.</p>
         </footer>
 
-    
+    </main>
+
 </body>
 
 </html>

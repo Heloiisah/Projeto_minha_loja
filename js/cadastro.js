@@ -7,7 +7,7 @@ const campoTelefone = document.querySelector("#telefone");
 const campoCep = document.querySelector("#cep");
 
 // MÁSCARA DO CPF
-campoCpf.addEventListener("input", function(){
+campoCpf.oninput = function () {
 
     let valor = campoCpf.value;
 
@@ -18,10 +18,10 @@ campoCpf.addEventListener("input", function(){
 
     campoCpf.value = valor;
 
-});
+};
 
 // MÁSCARA DO TELEFONE
-campoTelefone.addEventListener("input", function(){
+campoTelefone.oninput = function () {
 
     let valor = campoTelefone.value;
 
@@ -31,10 +31,10 @@ campoTelefone.addEventListener("input", function(){
 
     campoTelefone.value = valor;
 
-});
+};
 
 // MÁSCARA DO CEP
-campoCep.addEventListener("input", function(){
+campoCep.oninput = function () {
 
     let valor = campoCep.value;
 
@@ -43,28 +43,28 @@ campoCep.addEventListener("input", function(){
 
     campoCep.value = valor;
 
-});
+};
 
 // CADASTRO
-formulario.addEventListener("submit", function(e){
+formulario.onsubmit = function (e) {
 
     e.preventDefault();
 
-    const nome = document.querySelector("#nome").value.trim();
-    const cpf = document.querySelector("#cpf").value.trim();
-    const data = document.querySelector("#data").value;
-    const telefone = document.querySelector("#telefone").value.trim();
-    const email = document.querySelector("#email").value.trim();
-    const endereco = document.querySelector("#endereco").value.trim();
-    const bairro = document.querySelector("#bairro").value.trim();
-    const cidade = document.querySelector("#cidade").value.trim();
-    const estado = document.querySelector("#estado").value;
-    const cep = document.querySelector("#cep").value.trim();
-    const senha = document.querySelector("#senha").value;
-    const confirmar = document.querySelector("#confirmar").value;
-    const novidades = document.querySelector("#novidades").checked;
+    let nome = document.querySelector("#nome").value.trim();
+    let cpf = document.querySelector("#cpf").value.trim();
+    let data = document.querySelector("#data").value;
+    let telefone = document.querySelector("#telefone").value.trim();
+    let email = document.querySelector("#email").value.trim();
+    let endereco = document.querySelector("#endereco").value.trim();
+    let bairro = document.querySelector("#bairro").value.trim();
+    let cidade = document.querySelector("#cidade").value.trim();
+    let estado = document.querySelector("#estado").value;
+    let cep = document.querySelector("#cep").value.trim();
+    let senha = document.querySelector("#senha").value;
+    let confirmar = document.querySelector("#confirmar").value;
+    let novidades = document.querySelector("#novidades").checked;
 
-    if(
+    if (
         nome == "" ||
         cpf == "" ||
         data == "" ||
@@ -76,39 +76,55 @@ formulario.addEventListener("submit", function(e){
         estado == "" ||
         senha == "" ||
         confirmar == ""
-    ){
+    ) {
+
         alert("Preencha todos os campos.");
         return;
+
     }
 
-    if(senha != confirmar){
+    if (senha != confirmar) {
+
         alert("As senhas não coincidem.");
         return;
+
     }
 
-    const cliente = {
-        nome,
-        cpf,
-        data,
-        telefone,
-        email,
-        endereco,
-        bairro,
-        cidade,
-        estado,
-        cep,
-        senha,
-        novidades
+    let cliente = {
+
+        nome: nome,
+        cpf: cpf,
+        data: data,
+        telefone: telefone,
+        email: email,
+        endereco: endereco,
+        bairro: bairro,
+        cidade: cidade,
+        estado: estado,
+        cep: cep,
+        senha: senha,
+        novidades: novidades
+
     };
 
-    let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
+    let clientes = JSON.parse(localStorage.getItem("clientes"));
+
+    if (clientes == null) {
+
+        clientes = [];
+
+    }
 
     clientes.push(cliente);
 
-    localStorage.setItem("clientes", JSON.stringify(clientes));
+    localStorage.setItem(
+        "clientes",
+        JSON.stringify(clientes)
+    );
 
     alert("Cadastro realizado com sucesso!");
 
     formulario.reset();
 
-});
+};
+
