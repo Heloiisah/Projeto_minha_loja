@@ -15,11 +15,7 @@ const listItens = () => {
 // FUNÇÃO PARA SALVAR OS ITENS
 const salvarItens = () => {
 
-    sessionStorage.setItem(
-        "carrinhoSessao",
-        JSON.stringify(itensCarrinho)
-    );
-
+    sessionStorage.setItem( "carrinhoSessao", JSON.stringify(itensCarrinho) );
 }
 
 
@@ -89,10 +85,7 @@ const listarItens = () => {
             "</div>";
 
         // VALOR
-        coluna4.innerHTML =
-            "R$ " + Number(item.valor_unitario)
-                .toFixed(2)
-                .replace(".", ",");
+        coluna4.innerHTML = "R$ " + Number(item.valor_unitario) .toFixed(2) .replace(".", ",");
 
         // SUBTOTAL
         coluna5.innerHTML =
@@ -108,15 +101,9 @@ const listarItens = () => {
 
     let frete = 10;
 
-    document.querySelector("#valorProdutos").innerHTML =
-        "R$ " + total.toFixed(2).replace(".", ",");
-
-    document.querySelector("#valorFrete").innerHTML =
-        "R$ " + frete.toFixed(2).replace(".", ",");
-
-    document.querySelector("#valorTotal").innerHTML =
-        "R$ " + (total + frete).toFixed(2).replace(".", ",");
-
+    document.querySelector("#valorProdutos").innerHTML = "R$ " + total.toFixed(2).replace(".", ",");
+    document.querySelector("#valorFrete").innerHTML ="R$ " + frete.toFixed(2).replace(".", ",");
+    document.querySelector("#valorTotal").innerHTML ="R$ " + (total + frete).toFixed(2).replace(".", ",");
 }
 
 
@@ -132,7 +119,6 @@ const alterarQuantidade = (indice, valor) => {
     }
 
     salvarItens();
-
     listarItens();
 
 }
