@@ -1,34 +1,54 @@
-// RECUPERA OS PRODUTOS
+// CRIANDO O ARRAY DE ITENS DO CARRINHO
 let itensCarrinho = JSON.parse(sessionStorage.getItem("carrinhoSessao")) || [];
 
-// CARREGA A PÁGINA
 
-window.onload = function () {
+// FUNÇÃO PARA LISTAR OS ITENS DO CARRINHO
+const listItens = () => {
+
+    itensCarrinho = JSON.parse(sessionStorage.getItem("carrinhoSessao")) || [];
+
+    return itensCarrinho;
+
+}
+
+
+// FUNÇÃO PARA SALVAR OS ITENS
+const salvarItens = () => {
+
+    sessionStorage.setItem(
+        "carrinhoSessao",
+        JSON.stringify(itensCarrinho)
+    );
+
+}
+
+
+// CARREGA A PÁGINA
+window.onload = () => {
 
     listarItens();
 
-    let btnFinalizar = document.querySelector(".btnFinalizar");
+    const btnFinalizar = document.querySelector(".btnFinalizar");
 
-    btnFinalizar.onclick = function () {
+    btnFinalizar.onclick = () => {
 
         finalizarCompra();
 
-    };
+    }
 
-};
+}
 
-// LISTA OS PRODUTOS
-function listarItens() {
 
-    let tabela = document.querySelector("#listaProdutos table");
+// LISTAR PRODUTOS
+const listarItens = () => {
+
+    const tabela = document.querySelector("#listaProdutos table");
 
     if (tabela == null) {
 
         return;
 
     }
-
-   // LIMPA A TABELA
 
     while (tabela.rows.length > 1) {
 
@@ -38,11 +58,11 @@ function listarItens() {
 
     let total = 0;
 
-    itensCarrinho.forEach(function (item, indice) {
+    listItens().forEach((item, indice) => {
 
         let subtotal = item.valor_unitario * item.quantidade;
 
-        total = total + subtotal;
+        total += subtotal;
 
         let linha = tabela.insertRow();
 
@@ -53,7 +73,7 @@ function listarItens() {
         let coluna5 = linha.insertCell();
         let coluna6 = linha.insertCell();
 
-       // PRODUTO
+        // PRODUTO
         coluna1.innerHTML = item.descricao_produto;
 
         // IMAGEM
@@ -63,22 +83,20 @@ function listarItens() {
         // QUANTIDADE
         coluna3.innerHTML =
             "<div class='controleQuantidade'>" +
-            "<button onclick='alterarQuantidade(" + indice + ", -1)'>-</button>" +
+            "<button onclick='alterarQuantidade(" + indice + ",-1)'>-</button>" +
             "<input value='" + item.quantidade + "' readonly>" +
-            "<button onclick='alterarQuantidade(" + indice + ", 1)'>+</button>" +
+            "<button onclick='alterarQuantidade(" + indice + ",1)'>+</button>" +
             "</div>";
 
-        // VALOR UNITÁRIO
+        // VALOR
         coluna4.innerHTML =
-            "R$ " +
-            Number(item.valor_unitario)
+            "R$ " + Number(item.valor_unitario)
                 .toFixed(2)
                 .replace(".", ",");
 
-       // SUBTOTAL
+        // SUBTOTAL
         coluna5.innerHTML =
-            "R$ " +
-            subtotal
+            "R$ " + subtotal
                 .toFixed(2)
                 .replace(".", ",");
 
@@ -101,11 +119,11 @@ function listarItens() {
 
 }
 
-// AUMENTA OU DIMINUI QUANTIDADE
-function alterarQuantidade(indice, valor) {
 
-    itensCarrinho[indice].quantidade =
-        itensCarrinho[indice].quantidade + valor;
+// ALTERAR QUANTIDADE
+const alterarQuantidade = (indice, valor) => {
+
+    itensCarrinho[indice].quantidade += valor;
 
     if (itensCarrinho[indice].quantidade < 1) {
 
@@ -113,28 +131,21 @@ function alterarQuantidade(indice, valor) {
 
     }
 
-    sessionStorage.setItem(
-        "carrinhoSessao",
-        JSON.stringify(itensCarrinho)
-    );
+    salvarItens();
 
     listarItens();
 
 }
 
-// REMOVE PRODUTO
-function removerItem(indice) {
 
-    let resposta = confirm("Deseja remover este produto do carrinho?");
+// REMOVER ITEM
+const removerItem = (indice) => {
 
-    if (resposta) {
+    if (confirm("Deseja remover este produto do carrinho?")) {
 
         itensCarrinho.splice(indice, 1);
 
-        sessionStorage.setItem(
-            "carrinhoSessao",
-            JSON.stringify(itensCarrinho)
-        );
+        salvarItens();
 
         listarItens();
 
@@ -142,14 +153,16 @@ function removerItem(indice) {
 
 }
 
+
 // FINALIZAR COMPRA
-function finalizarCompra() {
+const finalizarCompra = () => {
 
     let cep = document.querySelector("#cep").value;
 
     if (cep == "") {
 
         alert("Digite o CEP.");
+
         return;
 
     }
@@ -157,6 +170,7 @@ function finalizarCompra() {
     if (itensCarrinho.length == 0) {
 
         alert("Seu carrinho está vazio.");
+
         return;
 
     }
