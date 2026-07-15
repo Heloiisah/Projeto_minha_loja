@@ -495,3 +495,80 @@ border-radius:20px;
     text-transform: uppercase;
     color: var(--cor02);
 }         
+
+.btnRemover{
+    background:#843ead;
+    color:#fff;
+    border:none;
+    padding:8px 15px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btnRemover:hover{
+    background: #972020;
+}
+.quantidade{
+    width:40px;
+    height:28px;
+    text-align:center;
+    border:1px solid #843ead;
+    border-radius:3px;
+    background:#fff;
+    outline:none;
+    font-size:14px;
+}
+
+
+
+#listaProdutos td{
+    text-align:center;
+    vertical-align:middle;
+}
+
+#listaProdutos td:first-child{
+    text-align:left;
+}
+
+.controleQuantidade{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+}
+
+
+.controleQuantidade button{
+
+    width:25px;
+    height:25px;
+    border:1px solid #843ead;
+    background:white;
+    color:#843ead;
+    cursor:pointer;
+    border-radius:3px;
+    font-weight:bold;
+
+}
+
+
+
+.controleQuantidade input{
+
+    width:35px;
+    height:25px;
+    text-align:center;
+    border:1px solid #843ead;
+    border-radius:3px;
+
+}
+
+
+
+.controleQuantidade button:hover{
+
+    background:#9d6edb;
+    color:white;
+
+}
