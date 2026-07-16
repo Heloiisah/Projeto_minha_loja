@@ -12,12 +12,12 @@ const montaTelaCarrinho = () => {
 
         const linha = document.createElement("tr");
 
-        /* PRODUTO */
+        // PRODUTO 
 
         const tdProduto = document.createElement("td");
         tdProduto.innerHTML = elem.descricao_produto;
 
-        /* IMAGEM */
+        // IMAGEM 
 
         const tdImagem = document.createElement("td");
 
@@ -27,7 +27,7 @@ const montaTelaCarrinho = () => {
 
         tdImagem.appendChild(imgItem);
 
-        /* QUANTIDADE */
+        // QUANTIDADE 
 
         const tdQuantidade = document.createElement("td");
 
@@ -42,12 +42,12 @@ const montaTelaCarrinho = () => {
         inputQuantidade.setAttribute("value", elem.quantidade);
         inputQuantidade.setAttribute("min", "1"); 
 
-        /* IMPEDE O VALOR MENOR */
+        // IMPEDE O VALOR MENOR 
 
         inputQuantidade.addEventListener("change", (e) => {
             let novaQuantidade = parseInt(e.target.value);
 
-            /* VALIDA A QUANTIDADE */
+            // VALIDA A QUANTIDADE 
             
             if (isNaN(novaQuantidade) || novaQuantidade <= 0) {
                 novaQuantidade = 1;
@@ -66,13 +66,13 @@ const montaTelaCarrinho = () => {
 
         tdQuantidade.appendChild(divQuantidade);
 
-        /* PREÇO */
+        // PREÇO 
 
         const tdPreco = document.createElement("td");
         tdPreco.innerHTML =
             `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace(".", ",")}`;
 
-        /* SUBTOTAL */
+        // SUBTOTAL 
 
         const tdSubtotal = document.createElement("td");
 
@@ -83,7 +83,7 @@ const montaTelaCarrinho = () => {
         tdSubtotal.innerHTML =
             `R$ ${subtotal.toFixed(2).replace(".", ",")}`;
 
-        /* REMOVER */
+        // REMOVER 
 
         const tdRemover = document.createElement("td");
 
@@ -103,7 +103,7 @@ const montaTelaCarrinho = () => {
 
         tdRemover.appendChild(btnRemover);
 
-        /* MONTANDO A LINHA */
+        // MONTANDO A LINHA 
 
         linha.appendChild(tdProduto);
         linha.appendChild(tdImagem);
