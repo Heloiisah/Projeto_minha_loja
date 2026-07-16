@@ -83,7 +83,7 @@ const montaTelaCarrinho = () => {
         tdSubtotal.innerHTML =
             `R$ ${subtotal.toFixed(2).replace(".", ",")}`;
 
-        // REMOVER 
+        //BOTÃO DE REMOVER 
 
         const tdRemover = document.createElement("td");
 
