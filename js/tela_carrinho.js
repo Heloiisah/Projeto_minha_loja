@@ -43,7 +43,24 @@ const montaTelaCarrinho = () => {
         inputQuantidade.setAttribute("id", `quant${i}`);
         inputQuantidade.setAttribute("class", "quantidade");
         inputQuantidade.setAttribute("value", elem.quantidade);
-        inputQuantidade.setAttribute("readonly", true);
+        inputQuantidade.setAttribute("min", "1"); // Auxilia na interface para não permitir abaixo de 1 via setinhas
+
+        inputQuantidade.addEventListener("change", (e) => {
+            let novaQuantidade = parseInt(e.target.value);
+
+            // Validação: Aceitar apenas inteiros positivos. Se for NaN, nulo ou <= 0, altera para 1.
+            if (isNaN(novaQuantidade) || novaQuantidade <= 0) {
+                novaQuantidade = 1;
+            }
+
+            elem.quantidade = novaQuantidade;
+
+            let itens = listItens();
+            itens[i].quantidade = elem.quantidade;
+            sessionStorage.setItem("carrinhoSessao", JSON.stringify(itens));
+
+            montaTelaCarrinho();
+        });
 
         const btnMais = document.createElement("button");
         btnMais.innerHTML = "+";
