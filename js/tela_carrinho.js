@@ -40,12 +40,15 @@ const montaTelaCarrinho = () => {
         inputQuantidade.setAttribute("id", `quant${i}`);
         inputQuantidade.setAttribute("class", "quantidade");
         inputQuantidade.setAttribute("value", elem.quantidade);
-        inputQuantidade.setAttribute("min", "1"); // Auxilia na interface para não permitir abaixo de 1 via setinhas
+        inputQuantidade.setAttribute("min", "1"); 
+
+        /* IMPEDE O VALOR MENOR */
 
         inputQuantidade.addEventListener("change", (e) => {
             let novaQuantidade = parseInt(e.target.value);
 
-            // Validação: Aceitar apenas inteiros positivos. Se for NaN, nulo ou <= 0, altera para 1.
+            /* VALIDA A QUANTIDADE */
+            
             if (isNaN(novaQuantidade) || novaQuantidade <= 0) {
                 novaQuantidade = 1;
             }
