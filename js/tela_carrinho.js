@@ -34,9 +34,6 @@ const montaTelaCarrinho = () => {
         const divQuantidade = document.createElement("div");
         divQuantidade.setAttribute("class", "controleQuantidade");
 
-        const btnMenos = document.createElement("button");
-        btnMenos.innerHTML = "-";
-
         const inputQuantidade = document.createElement("input");
         inputQuantidade.setAttribute("type", "number");
         inputQuantidade.setAttribute("name", `quant${i}`);
@@ -62,50 +59,7 @@ const montaTelaCarrinho = () => {
             montaTelaCarrinho();
         });
 
-        const btnMais = document.createElement("button");
-        btnMais.innerHTML = "+";
-
-        btnMenos.addEventListener("click", () => {
-
-            if (elem.quantidade > 1) {
-
-                elem.quantidade--;
-
-                let itens = listItens();
-
-                itens[i].quantidade = elem.quantidade;
-
-                sessionStorage.setItem(
-                    "carrinhoSessao",
-                    JSON.stringify(itens)
-                );
-
-                montaTelaCarrinho();
-
-            }
-
-        });
-
-        btnMais.addEventListener("click", () => {
-
-            elem.quantidade++;
-
-            let itens = listItens();
-
-            itens[i].quantidade = elem.quantidade;
-
-            sessionStorage.setItem(
-                "carrinhoSessao",
-                JSON.stringify(itens)
-            );
-
-            montaTelaCarrinho();
-
-        });
-
-        divQuantidade.appendChild(btnMenos);
         divQuantidade.appendChild(inputQuantidade);
-        divQuantidade.appendChild(btnMais);
 
         tdQuantidade.appendChild(divQuantidade);
 
