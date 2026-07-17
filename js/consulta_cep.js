@@ -57,4 +57,8 @@ const consultaCEP = async (cep) => {
 
 }
 
-//
+//FUNÇÃO CARREGA INPUTS
+const carregaInput = (objEndereco)=>{
+
+}
+
