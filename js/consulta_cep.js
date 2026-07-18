@@ -1,77 +1,74 @@
-//PEGANDO ELEMENETO DO DOM
-const inputCep = document.querySelector('#cep')
+// PEGANDO ELEMENTO DO DOM
+const inputCep = document.querySelector("#cep");
 
-//CAPTURANDO O EVENTO change
-inputCep.addEventListener('change', (evt) => {
+// CAPTURANDO O EVENTO CHANGE
+inputCep.addEventListener("change", (evt) => {
 
-    //PEGANDO OS NÚMEROS DOS INPUTCEP
-    const numCep = evt.target.value.replace(/\D/g, "")
+    // REMOVE TUDO QUE NÃO FOR NÚMERO
+    const numCep = evt.target.value.replace(/\D/g, "");
 
-    //VERIFICA SE POSSUI 8 DIGITOS
+    // VERIFICA SE POSSUI 8 DÍGITOS
     if (numCep.length !== 8) {
-        alert("CEP INVALIDO")
-
-        return
+        alert("CEP INVÁLIDO");
+        return;
     }
 
-    //CHAMA A FUNÇÃO consultaCEP
-    consultaCEP(numCep)
+    // CHAMA A FUNÇÃO
+    consultaCEP(numCep);
 
-})
+});
 
-
-//FUNÇÃO CONSULTA CEP VIACEP
+// FUNÇÃO CONSULTA CEP
 const consultaCEP = async (cep) => {
 
-    //TENTA CONECTAR A API
     try {
-    
-        //FAZ A COMUNICAÇÃO COM A API DO VIA CEP
-        //AWAIT - GUARDA ATÉ OBTER UM PROMISSE
-        const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
 
-        //SE O STATUS DA RESPOSTA NÃO FOR OK. DISPARA UMA EXCESSÃO
+        // CONSULTA A API
+        const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+
         if (!resposta.ok) {
-            throw new Error("ERRO NA REQUISIÇÃO")
+            throw new Error("Erro ao consultar o CEP.");
         }
 
-        //OBTEM OS DADOS DA API
-        const dadosEndereco = await resposta.json()
+        const dadosEndereco = await resposta.json();
 
-
-        //VERIFICANDO SE OS DADOS SÃO VÁLIDOS
         if (dadosEndereco.erro) {
-            alert("CEP NÃO LOCALIZADO")
-
-            return
+            alert("CEP NÃO LOCALIZADO");
+            return;
         }
 
-        //CHAMA A FUNÇÃO carregaInput
-        carregaInput(dadosEndereco)
+        carregaInput(dadosEndereco);
 
-    //CASO HAJA QUALQUER ERRO É DISPARADA UMA EXCEÇÃO
     } catch (erro) {
-        console.log("ERRO", erro.message)
+
+        console.log("ERRO:", erro.message);
+        alert("Erro ao consultar o CEP.");
+
     }
 
-}
+};
 
-//OBJETO LITERAL DOS  INPUTS
+// OBJETO COM OS CAMPOS DO FORMULÁRIO
 const campos = {
-    logradouro:  document.querySelector ('#logradouro'),
-    bairro: document.querySelector('#bairro'),
-    localidade: document.querySelector('#localidade'),
-    uf: document.querySelector('#uf')
-}
 
-//FUNÇÃO CARREGA INPUTS
-const carregaInput = (objEndereco)=>{
-    const divEndereco = document.querySelector('#div-dados-endereço')
-    for(let campo in objEndereco){
-        campos[campo].value = objEndereco[campo]
-        campos[campo].value = objEndereco[campo]
+    endereco: document.querySelector("#endereco"),
+    bairro: document.querySelector("#bairro"),
+    cidade: document.querySelector("#cidade"),
+    estado: document.querySelector("#estado")
 
-    }
+};
 
-}
+// PREENCHE OS CAMPOS
+const carregaInput = (objEndereco) => {
 
+    campos.endereco.value = objEndereco.logradouro;
+    campos.bairro.value = objEndereco.bairro;
+    campos.cidade.value = objEndereco.localidade;
+    campos.estado.value = objEndereco.uf;
+
+    campos.endereco.disabled = true;
+    campos.bairro.disabled = true;
+    campos.cidade.disabled = true;
+    campos.estado.disabled = true;
+
+};
